@@ -1,0 +1,29 @@
+{
+  "name": "ramda-functions",
+  "version": "1.0.0",
+  "main": "",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "raw-loader": "^0.5.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "scripts": {
+    "start": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p --progress",
+    "devServer": "cross-env NODE_ENV=development webpack-dev-server"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "ramda": "^0.26.1"
+  },
+  "keywords": [],
+  "author": "",
+  "description": ""
+}
