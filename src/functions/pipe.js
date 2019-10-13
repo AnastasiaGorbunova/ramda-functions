@@ -1,35 +1,31 @@
 import * as R from 'ramda';
 
-const getName = (user) => {
-	return user.name;
-};
+const getName = (user) =>  user.name;
 
-const lowercase = (string) => {
-	return string.toLowerCase();
-};
+const addQuestionMark = (string) =>  `${string}?`;
 
-const getThreeLetters = (string) => {
-	return string.substring(0, 3);
-};
-
+const addExclamationMark = (string) => `${string}!`;
 
 const pipe = (...functions) => {
-	return (data) => {
+	return (data, ...args) => {
+		// console.log(functions);
 		return functions.reduce((accumulator, currentFunction) => {
-			return currentFunction(accumulator);
+			return currentFunction(accumulator, ...args);
 		}, data);
 	}
 };
 
-console.log(pipe(
+console.log('pipe', pipe(
 	getName,
-	lowercase,
-	getThreeLetters
+	addQuestionMark,
+	addExclamationMark
 )({name : 'Nastyashka'}));
 
-const inc = R.add(1);
-const dbl = R.multiply(2);
+// const inc = R.add(1);
+// const dbl = R.multiply(2);
+//
+// const calculator = pipe(inc, dbl, dbl);
+//
+// console.log('pipe', calculator(10));
 
-const calculator = pipe(inc, dbl, dbl);
-
-console.log(calculator(10));
+// console.log('pipe', pipe(Math.pow, R.negate, R.inc)(3, 4));
