@@ -8,7 +8,6 @@ const addExclamationMark = (string) => `${string}!`;
 
 const pipe = (...functions) => {
 	return (data, ...args) => {
-		// console.log(functions);
 		return functions.reduce((accumulator, currentFunction) => {
 			return currentFunction(accumulator, ...args);
 		}, data);

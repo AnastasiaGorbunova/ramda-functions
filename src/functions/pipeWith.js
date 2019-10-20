@@ -33,6 +33,6 @@ const f = pipeWhileNotNil([plusOne, makeNull, plusTwo]);
 
 f(3);
 
-const f = pipeWith((f, res) => R.isNil(res) ? res : f(res))([Math.pow, R.negate, R.inc])(3, 4);
-
-console.log(f);
+// const f = pipeWith((f, res) => R.isNil(res) ? res : f(res))([Math.pow, R.negate, R.inc])(3, 4);
+//
+// console.log(f);
