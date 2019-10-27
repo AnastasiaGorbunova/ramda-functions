@@ -8,17 +8,16 @@ const sortBy = (sortFunc, data) => {
 		return sortFunc(sortFunc, data)
 	}
 	return (_data) => {
+		// because of sort method is mutable
 		const copyData = _data.slice();
 		return copyData.sort((a, b) => {
-			console.log({a, b});
-			let funcA = sortFunc(a);
-			let funcB = sortFunc(b);
-			console.log({funcA, funcB});
+			let dataA = sortFunc(a);
+			let dataB = sortFunc(b);
 
-			if (funcA === funcB) {
+			if (dataA === dataB) {
 				return 0;
 			}
-			return funcA > funcB ? 1 : -1;
+			return dataA > dataB ? 1 : -1;
 		})
 	}
 };
