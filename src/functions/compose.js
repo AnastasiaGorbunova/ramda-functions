@@ -16,7 +16,7 @@ export const compose = (...functions) => {
 
 // console.log(compose(Math.abs, R.add(1), Math.pow)(-4, 2));
 
-console.log(compose(Math.abs, R.add(1), R.multiply(2))(-4));
+// console.log(compose(Math.abs, R.add(1), R.multiply(2))(-4));
 
 // console.log('compose', compose(
 // 	addQuestionMark,
