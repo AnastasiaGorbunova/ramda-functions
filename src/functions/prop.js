@@ -1,8 +1,9 @@
 import * as R from 'ramda';
-// import {compose} from 'functions/compose';
+
+import { compose } from 'functions/compose';
 
 export const prop = (key, obj) => {
-	if(obj) {
+	if (obj) {
 		return obj[key];
 	}
 	return (_obj) => prop(key, _obj);
@@ -13,4 +14,3 @@ export const prop = (key, obj) => {
 // console.log(compose(R.inc, prop('x'))({x : 3}));
 
 // console.log(prop('x', {x : 100}));
-//

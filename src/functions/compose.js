@@ -1,11 +1,5 @@
 import * as R from 'ramda';
 
-const getName = (user) => user.name;
-
-const addQuestionMark = (string) =>  `${string}?`;
-
-const addExclamationMark = (string) => `${string}!`;
-
 export const compose = (...functions) => {
 	return (data, ...args) => {
 		return functions.reduceRight((accumulator, currentFunction) => {
@@ -13,6 +7,10 @@ export const compose = (...functions) => {
 		}, data);
 	}
 };
+
+// const getName = (user) => user.name;
+// const addQuestionMark = (string) => `${string}?`;
+// const addExclamationMark = (string) => `${string}!`;
 
 // console.log(compose(Math.abs, R.add(1), Math.pow)(-4, 2));
 

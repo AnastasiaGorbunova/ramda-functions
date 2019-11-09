@@ -1,11 +1,5 @@
 import * as R from 'ramda';
 
-const getName = (user) =>  user.name;
-
-const addQuestionMark = (string) =>  `${string}?`;
-
-const addExclamationMark = (string) => `${string}!`;
-
 const pipe = (...functions) => {
 	return (data, ...args) => {
 		return functions.reduce((accumulator, currentFunction) => {
@@ -14,11 +8,15 @@ const pipe = (...functions) => {
 	}
 };
 
-console.log('pipe', pipe(
-	getName,
-	addQuestionMark,
-	addExclamationMark
-)({name : 'Nastyashka'}));
+// const getName = (user) =>  user.name;
+// const addQuestionMark = (string) =>  `${string}?`;
+// const addExclamationMark = (string) => `${string}!`;
+
+// console.log('pipe', pipe(
+// 	getName,
+// 	addQuestionMark,
+// 	addExclamationMark
+// )({name : 'Nastyashka'}));
 
 // const inc = R.add(1);
 // const dbl = R.multiply(2);
