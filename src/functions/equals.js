@@ -9,12 +9,12 @@ export const equals = (a, b) => {
 		return false;
 	}
 
-	if (!a && !b) {
-		return true;
+	if (types.includes(typeof a)) {
+		return a === b;
 	}
 
-	if (types.includes(typeof a) && types.includes(typeof b)) {
-		return a === b;
+	if (!!a) {
+		return true;
 	}
 
 	// for handling cyclical data
@@ -52,7 +52,7 @@ export const equals = (a, b) => {
 
 // console.log(equals(1, 1)); //=> true
 // console.log(equals(1, '1')); //=> false
-// console.log(equals([null, 2, 3], [1, 2, 3])); //=> true
+// console.log(equals([1, 2, 3], [1, 2, 3])); //=> true
 
 // const a = [];
 // a[0] = a;
